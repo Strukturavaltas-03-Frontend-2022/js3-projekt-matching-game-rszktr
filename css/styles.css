@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: powderblue;
+}
+
+.game__container {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(2, 140px);
+    grid-column-gap: 22px;
+    grid-row-gap: 22px;
+}
+
+.card__container.flip .card {
+    transform: rotateY(180deg);
+}
+
+.card {
+    position:relative;
+    width: 100px;
+    height: 140px;
+    transition: all 2s ease;
+    transform-style: preserve-3d;
+}
+
+.card__back,
+.card__front {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 0.25rem;
+}
+
+.card__back {
+    background-image: url(../img/card_back.jpg);
+    background-size: 100%;
+    z-index: 2;
+}
+
+.card__front {
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.mushroom {
+    background-image: url(../img/card_mushroom.jpg);
+    background-size: 100%;
+}
+
+.star {
+    background-image: url(../img/card_star.jpg);
+    background-size: 100%;
+}
+
+.up {
+    background-image: url(../img/card_upshroom.jpg);
+    background-size: 100%;
+}
+
+.leaf {
+    background-image: url(../img/card_leaf.jpg);
+    background-size: 100%;
+}
+
+.flower {
+    background-image: url(../img/card_flower.jpg);
+    background-size: 100%;
+}
