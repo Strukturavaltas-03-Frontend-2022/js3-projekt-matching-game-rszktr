@@ -1,3 +1,8 @@
+## v0.95
+
+### Elkészült:
+- Óra modulba szervezése
+
 ## v0.9
 
 ### Elkészült:

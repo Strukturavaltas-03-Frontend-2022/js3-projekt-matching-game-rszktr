@@ -1,65 +1,10 @@
-// Óra működése
-const clockDisplay = document.querySelector('.timer')
-
-let startTime = 0;
-let presentTime = 0;
-let elapsedTime = new Date(0);
-let startInterval = 0
-
-const setStartTime = () => startTime = new Date();
-const setPresentTime = () => presentTime = new Date();
-const countMilliseconds = () => elapsedTime.setMilliseconds(presentTime - startTime)
-
-const turnTimeToString = (time) => {
-  return time.toLocaleTimeString([], {
-    hourCycle: 'h23',
-    minute: '2-digit',
-    second: '2-digit'
-  });
-};
-
-const clockWork = () => {
-  setPresentTime();
-  countMilliseconds();
-  showTime();
-  elapsedTime = new Date(0);
-}
-
-
-const startTimer = () => {
-  setStartTime();
-  startInterval = setInterval(clockWork, 1000)
-}
-
-
-// Monospace megoldása
-const timeDigitClasses = [
-  ".minutesFirstDigit",
-  ".minutesSecondDigit",
-  ".secondsFirstDigit",
-  ".secondsSecondDigit"
-];
-
-const createSeparateCharacters = (timeAsString) => {
-  return arrayOfDigits = [
-    timeAsString[0],
-    timeAsString[1],
-    timeAsString[3],
-    timeAsString[4],
-  ]
-};
-
-function showTime() {
-  createSeparateCharacters(turnTimeToString(elapsedTime))
-  for (let i = 0; i < arrayOfDigits.length; i++) {
-    document.querySelector(timeDigitClasses[i]).innerHTML = arrayOfDigits[i];
-  }
-};
+import {
+ elapsedTime, startInterval, startTimer, showTime, modifyImportVariable
+} from './timer.js'
 
 
 // Játék
 const cardContainer = document.querySelectorAll('.card__container')
-const cardBacks = document.querySelectorAll('.card__back')
 const cardFronts = document.querySelectorAll('.card__front')
 
 let firstCard = 0;
@@ -145,7 +90,7 @@ const resetGame = () => {
   activateCards();
   clickCounter = 0;
   matchCounter = 0;
-  elapsedTime = new Date(0);
+  modifyImportVariable(elapsedTime, new Date(0));
   showTime(elapsedTime)
 }
 
