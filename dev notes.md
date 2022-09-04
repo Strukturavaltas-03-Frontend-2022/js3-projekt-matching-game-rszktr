@@ -1,3 +1,13 @@
+## v0.9
+
+### Elkészült:
+- Az első kártyára való kattintáskor elindul egy számláló, amely a játékidőt mutatja perc:másodperc formában
+- A számláló a játék végén megáll
+- 5 másodperc múlva a számláló nullázódik, és az összes kártya visszafordul, kezdődhet egy új játék
+
+### Hátravan:
+- Formai igazítások, finomhangolások, változók pontosítása, modulba szervezés...stb
+
 ## v0.75
 
 ### Elkészült:
