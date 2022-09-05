@@ -2,7 +2,7 @@
     font-family: "Digital7";
     src: url('../fonts/digital-7.regular.ttf');
     font-variant-numeric: tabular-nums;
-    
+
 }
 
 * {
@@ -40,7 +40,7 @@ body {
 .digit {
     width: 33.33px;
     text-align: center;
-  }
+}
 
 .playingfield {
     display: grid;
@@ -56,7 +56,7 @@ body {
 }
 
 .card {
-    position:relative;
+    position: relative;
     width: 100px;
     height: 140px;
     transition: all 2s ease;

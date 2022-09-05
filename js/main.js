@@ -1,9 +1,7 @@
 import {
- elapsedTime, startInterval, startTimer, showTime, modifyImportVariable
+  elapsedTime, startInterval, startTimer, showTime, modifyImportVariable
 } from './timer.js'
 
-
-// Játék
 const cardContainer = document.querySelectorAll('.card__container')
 const cardFronts = document.querySelectorAll('.card__front')
 
@@ -16,10 +14,16 @@ let matchCounter = 0;
 // Játék előkészítése
 const symbols = ['mushroom', 'star', 'flower', 'leaf', 'up'];
 const defaultOrder = symbols.flatMap(item => [item, item]);
-let shuffledOrder = defaultOrder.sort(() => Math.random() - 0.5);
 
-for (let i = 0; i < cardFronts.length; i++) {
-  cardFronts[i].classList.add(shuffledOrder[i])
+const shuffleCards = () => {
+  cardFronts.forEach(item => item.removeAttribute('class'))
+  cardFronts.forEach(item => item.classList.add('card__front'))
+  let shuffledOrder = defaultOrder.sort(() => Math.random() - 0.5);
+  shuffledOrder = shuffledOrder.sort(() => Math.random() - 0.5);
+
+  for (let i = 0; i < cardFronts.length; i++) {
+    cardFronts[i].classList.add(shuffledOrder[i])
+  };
 }
 
 const activateCards = () => {
@@ -28,6 +32,7 @@ const activateCards = () => {
   })
 }
 
+shuffleCards();
 activateCards()
 
 const silenceCards = () => {
@@ -92,14 +97,4 @@ const resetGame = () => {
   matchCounter = 0;
   modifyImportVariable(elapsedTime, new Date(0));
   showTime(elapsedTime)
-}
-
-const shuffleCards = () => {
-  cardFronts.forEach(item => item.removeAttribute('class'))
-  cardFronts.forEach(item => item.classList.add('card__front'))
-  shuffledOrder = defaultOrder.sort(() => Math.random() - 0.5);
-  
-  for (let i = 0; i < cardFronts.length; i++) {
-  cardFronts[i].classList.add(shuffledOrder[i])
-  };
 }
