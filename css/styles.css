@@ -1,8 +1,6 @@
 @font-face {
     font-family: "Digital7";
     src: url('../fonts/digital-7.regular.ttf');
-    font-variant-numeric: tabular-nums;
-
 }
 
 * {
@@ -31,7 +29,7 @@ body {
 
 .timer {
     display: flex;
-    font-family: 'Digital7', monospace;
+    font-family: 'Digital7';
     font-size: 4rem;
     color: white;
     margin-bottom: 50px;
